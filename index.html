@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ojana Travel | Travel • Connect • Discover</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.4);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+    }
+
+    .logo h2{
+      font-size:28px;
+      font-weight:700;
+      background:linear-gradient(90deg,#ff00ff,#00d9ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#00d9ff;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:120px 8% 60px;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .gradient{
+      background:linear-gradient(90deg,#ff00ff,#00d9ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-text p{
+      color:#cfcfcf;
+      line-height:1.8;
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 35px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.4s;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#ff00ff,#00d9ff);
+      color:white;
+      box-shadow:0 0 20px rgba(0,217,255,0.4);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px);
+    }
+
+    .btn-outline{
+      border:2px solid #00d9ff;
+      background:transparent;
+      color:#00d9ff;
+    }
+
+    .btn-outline:hover{
+      background:#00d9ff;
+      color:black;
+    }
+
+    .hero-image{
+      flex:1;
+      min-width:300px;
+      text-align:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:520px;
+      animation:float 4s ease-in-out infinite;
+      filter:drop-shadow(0 0 25px #00d9ff55);
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-20px);}
+      100%{transform:translateY(0px);}
+    }
+
+    /* FEATURES */
+
+    .features{
+      padding:80px 8%;
+      text-align:center;
+    }
+
+    .section-title{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .section-subtitle{
+      color:#bdbdbd;
+      max-width:700px;
+      margin:auto;
+      margin-bottom:60px;
+      line-height:1.8;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .feature-card{
+      background:#111;
+      padding:40px 30px;
+      border-radius:25px;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .feature-card:hover{
+      transform:translateY(-10px);
+      border-color:#00d9ff;
+      box-shadow:0 0 30px rgba(0,217,255,0.15);
+    }
+
+    .feature-card h3{
+      margin:20px 0 10px;
+      font-size:24px;
+    }
+
+    .feature-card p{
+      color:#c8c8c8;
+      line-height:1.7;
+    }
+
+    .icon{
+      font-size:50px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      padding:80px 8%;
+      display:flex;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .about img{
+      width:100%;
+      max-width:450px;
+    }
+
+    .about-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .about-text h2{
+      font-size:50px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:#d0d0d0;
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      padding:80px 8%;
+      text-align:center;
+    }
+
+    .contact-box{
+      background:#101010;
+      padding:50px;
+      border-radius:30px;
+      max-width:800px;
+      margin:auto;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-box h2{
+      font-size:40px;
+      margin-bottom:20px;
+    }
+
+    .contact-box p{
+      color:#cfcfcf;
+      margin-bottom:30px;
+    }
+
+    .contact-info{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .contact-item{
+      background:#161616;
+      padding:20px 30px;
+      border-radius:20px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:30px;
+      text-align:center;
+      color:#9f9f9f;
+      border-top:1px solid rgba(255,255,255,0.08);
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+
+      .hero-text h1{
+        font-size:48px;
+      }
+
+      .section-title{
+        font-size:36px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Ojana Travel Logo">
+      <h2>OJANA</h2>
+    </div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Tours</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>
+        Travel With <span class="gradient">Strangers</span><br>
+        Become A <span class="gradient">Family</span>
+      </h1>
+
+      <p>
+        Ojana Travel is not just a travel agency. 
+        It's a youth travel community where strangers connect, explore,
+        travel and create unforgettable memories together.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Book Your Trip</button>
+        <button class="btn btn-outline">Explore Tours</button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="logo.png" alt="Ojana Travel">
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features" id="features">
+
+    <h2 class="section-title">
+      Why Choose <span class="gradient">Ojana?</span>
+    </h2>
+
+    <p class="section-subtitle">
+      We create experiences where travelers can connect with new people,
+      explore amazing destinations, and enjoy group adventures safely.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="icon">✈</div>
+        <h3>Group Trips</h3>
+        <p>
+          Join exciting group tours with young travelers from different places.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🌍</div>
+        <h3>Explore Together</h3>
+        <p>
+          Discover beautiful destinations and hidden gems with new friends.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🤝</div>
+        <h3>Make Connections</h3>
+        <p>
+          Meet like-minded people and create memories that last forever.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <img src="logo.png" alt="About Ojana">
+
+    <div class="about-text">
+
+      <h2>
+        About <span class="gradient">Ojana Travel</span>
+      </h2>
+
+      <p>
+        Ojana Travel was created for the youth who love adventure,
+        social connection, and discovering new places.
+      </p>
+
+      <p>
+        We organize community-based travel experiences where solo travelers,
+        students, and explorers can travel together safely and affordably.
+      </p>
+
+      <button class="btn btn-primary">
+        Start Your Journey
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+
+      <h2>
+        Contact <span class="gradient">Us</span>
+      </h2>
+
+      <p>
+        Ready for your next adventure? Connect with Ojana Travel today.
+      </p>
+
+      <div class="contact-info">
+
+        <div class="contact-item">
+          📞 +91 8317879802
+        </div>
+
+        <div class="contact-item">
+          📧 ojana.travel.cs@gmail.com
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Ojana Travel | Travel • Connect • Discover
+  </footer>
+
+</body>
+</html>
