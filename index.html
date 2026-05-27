@@ -447,7 +447,36 @@
   </section>
 
   <!-- CONTACT -->
+.contact-form{
+  max-width:700px;
+  margin:40px auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
 
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:18px 20px;
+  border:none;
+  outline:none;
+  border-radius:15px;
+  background:#181818;
+  color:white;
+  font-size:16px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.contact-form textarea{
+  resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:#00d9ff;
+  box-shadow:0 0 15px rgba(0,217,255,0.2);
+}
   <section class="contact" id="contact">
 
     <div class="contact-box">
